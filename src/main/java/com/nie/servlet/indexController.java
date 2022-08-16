@@ -33,13 +33,15 @@ public class indexController {
         String ischecked = "";
 
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie:cookies) {
-            if(cookie.getName().equals("Username") || cookie.getName().equals("Password")){
-                if(cookie.getName().equals("Username")){
-                    username = URLDecoder.decode(cookie.getValue(),"utf-8");
-                    ischecked = "checked";
-                }else if(cookie.getName().equals("Password")){
-                    password = cookie.getValue();
+        if(cookies != null){
+            for (Cookie cookie:cookies) {
+                if(cookie.getName().equals("Username") || cookie.getName().equals("Password")){
+                    if(cookie.getName().equals("Username")){
+                        username = URLDecoder.decode(cookie.getValue(),"utf-8");
+                        ischecked = "checked";
+                    }else if(cookie.getName().equals("Password")){
+                        password = cookie.getValue();
+                    }
                 }
             }
         }

@@ -10,10 +10,10 @@
 	</parent>
 
 	<groupId>com.nie</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>BookManagerReception</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>BookManagerReception</name>
+	<description>Demo project for BookManagerReception</description>
 
 	<properties>
 		<java.version>1.8</java.version>
