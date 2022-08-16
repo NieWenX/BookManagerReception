@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nie.mapper.BooksMapper">
+    <select id="selectById" parameterType="int" resultType="Books">
+        select * from mybatis.books where bookId = #{bookId};
+    </select>
+
+    <select id="selectAll" resultType="Books">
+        select * from mybatis.books;
+    </select>
+
+    <select id="selectByName" parameterType="java.lang.String" resultType="Books">
+        select * from mybatis.books where bookName = #{bookName};
+    </select>
+
+    <insert id="insertByBook" parameterType="Books" >
+        insert into mybatis.books (`bookName`,`authors`,`date`,`publisher`) VALUE (#{bookName},#{authors},#{date},#{publisher});
+    </insert>
+
+    <delete id="deleteById" parameterType="int" >
+        delete from mybatis.books where bookId = #{bookId};
+    </delete>
+
+    <update id="updateById" parameterType="Books">
+        update mybatis.books set `bookName`=#{bookName},`authors`=#{authors},`date`=#{date},`publisher`=#{publisher}
+        where bookId=#{bookId};
+    </update>
+</mapper>
